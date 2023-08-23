@@ -1,0 +1,57 @@
+{
+  "name": "vscode-scroll-drags-cursor",
+  "displayName": "Scroll Keeps Cursor Onscreen",
+  "description": "Scroll keeps cursor onscreen while scrolling up or down using ctrl+up / ctrl+down.",
+  "version": "0.0.1",
+  "publisher": "Ignac Fetser",
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/ignacfetser/vscode-scroll-drags-cursor.git"
+  },
+  "engines": {
+    "vscode": "^1.81.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "scroll-drags-cursor.scrollScreenUp",
+        "title": "Scroll Screen Up While Keeping Cursor Onscreen"
+      },
+      {
+        "command": "scroll-drags-cursor.scrollScreenDown",
+        "title": "Scroll Screen Down While Keeping Cursor Onscreen"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "scroll-drags-cursor.scrollScreenUp",
+          "key": "ctrl+up"
+      },
+      {
+        "command": "scroll-drags-cursor.scrollScreenDown",
+          "key": "ctrl+down"
+      }
+  ]    
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.81.0",
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "20.2.5",
+    "eslint": "^8.41.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^5.1.3",
+    "@vscode/test-electron": "^2.3.2"
+  }
+}
